@@ -1,0 +1,17 @@
+/* style.css – custom styles for Campus Life Super App */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* box style */
+.wf-box {
+  border: 2px dashed #999;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fdfdfd;
+}
+
+.wf-box ul {
+  padding-left: 1.25rem;
+}
