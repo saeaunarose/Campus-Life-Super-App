@@ -1,120 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campus Life Super App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Life Super App</title>
 
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Campus Life Super App</a>
+    <!-- Leaflet CSS (for interactive map) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Campus Life</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dining.html">Dining</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- MAIN PAGE CONTENT -->
-  <main class="container my-4">
-    
-    <!-- HERO SECTION -->
-    <section class="wf-box mb-4">
-      <h1 class="h4 page-title">Welcome to Campus Life</h1>
-      <p>
-        Find everything you need for campus events, dining, and student life—all in one place.
-      </p>
-      <button class="btn btn-primary" id="viewTodayEventsBtn">
-        View Today's Events
-      </button>
-    </section>
-
-    <!-- CAMPUS WEATHER (EXTERNAL API) -->
-    <section class="wf-box mb-4" aria-labelledby="campus-weather-title">
-      <h2 id="campus-weather-title" class="h6 mb-2">Campus Weather</h2>
-      <p id="weatherStatus">Loading current weather...</p>
-    </section>
-
-    <!-- QUICK LINKS + SEARCH -->
-    <div class="row mb-4">
-      <section class="col-md-8 wf-box mb-3 mb-md-0">
-        <h2 class="h6">Quick Links</h2>
-        <ul class="mb-0">
-          <li><a href="events.html">Campus Events</a></li>
-          <li><a href="dining.html">Campus Dining</a></li>
-          <li><a href="#">Campus Map (future)</a></li>
-        </ul>
+    <!-- MAIN CONTENT -->
+    <main class="container my-4">
+      <!-- HERO SECTION -->
+      <section class="wf-box mb-4">
+        <h1 class="h4 page-title">Campus Life Super App</h1>
+        <p class="mb-3">
+          Find everything you need for campus events, dining, and student life
+          in one place.
+        </p>
+        <button
+          class="btn btn-light border"
+          id="viewTodayEventsBtn"
+          type="button"
+        >
+          View Today's Events
+        </button>
       </section>
 
-    <section class="col-md-4 wf-box">
-  <h2 class="h6">Search Campus Resources</h2>
-  <input
-    id="resourceSearch"
-    type="search"
-    class="form-control mb-2"
-    placeholder="Search events, dining, or services"
-    aria-label="Search campus resources"
-  />
-  <ul id="searchResults" class="small mb-0"></ul>
-</section>
-    </div>
+      <!-- REAL WEATHER (EXTERNAL API) -->
+      <section
+        class="wf-box mb-4"
+        aria-labelledby="campus-weather-title"
+      >
+        <h2 id="campus-weather-title" class="h6 mb-2">Campus Weather</h2>
+        <p id="weatherStatus">Loading current weather...</p>
+      </section>
 
-    <!-- UPCOMING EVENTS PREVIEW -->
-    <section id="upcomingEvents" class="wf-box mb-4" aria-labelledby="upcoming-events-heading">
-      <h2 id="upcoming-events-heading" class="h6 mb-2">Upcoming Events</h2>
-      <ul class="mb-0">
-        <li>Campus Safety Seminar – Nov 16</li>
-        <li>Basketball Game vs. Silverman – Nov 20</li>
-        <li>Library Study Night – Nov 22</li>
-      </ul>
-    </section>
+      <!-- INTERACTIVE CAMPUS MAP -->
+      <section class="wf-box mb-4" aria-labelledby="campus-map-title">
+        <h2 id="campus-map-title" class="h6 mb-2">Campus Map</h2>
+        <p class="small text-muted">
+          Zoom and drag to explore the area around campus.
+        </p>
+        <div
+          id="campusMap"
+          class="map-box"
+          role="img"
+          aria-label="Interactive map of the campus area"
+        ></div>
+      </section>
 
-    <!-- ANNOUNCEMENTS -->
-    <section class="wf-box mb-4" aria-labelledby="announcements-heading">
-      <h2 id="announcements-heading" class="h6 mb-2">Announcements</h2>
-      <ul class="mb-0">
-        <li>Dining hall will have extended hours during finals week.</li>
-        <li>New study rooms available in the library—reserve online.</li>
-      </ul>
-    </section>
-  </main>
+      <!-- QUICK LINKS + SEARCH -->
+      <div class="row mb-4">
+        <section class="col-md-8 wf-box mb-3 mb-md-0">
+          <h2 class="h6">Quick Links</h2>
+          <ul class="mb-0">
+            <li><a href="events.html">Events</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="#">Campus Map</a></li>
+          </ul>
+        </section>
 
-  <!-- FOOTER -->
-  <footer class="border-top py-3">
-    <div class="container text-center">
-      <small>© 2025 Campus Life Super App</small>
-    </div>
-  </footer>
+        <section class="col-md-4 wf-box">
+          <h2 class="h6">Search Campus Resources</h2>
+          <input
+            id="resourceSearch"
+            type="search"
+            class="form-control mb-2"
+            placeholder="Search events, dining, or services"
+            aria-label="Search campus resources"
+          />
+          <ul id="searchResults" class="small mb-0"></ul>
+        </section>
+      </div>
 
-  <!-- Bootstrap JS + custom script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+      <!-- UPCOMING EVENTS (scroll target) -->
+      <section id="upcomingEvents" class="wf-box mb-4">
+        <h2 class="h6">Upcoming Events</h2>
+        <ul class="mb-0">
+          <li>Campus Safety Seminar – Nov 16</li>
+          <li>Basketball Game vs. Silverman – Nov 20</li>
+          <li>Library Study Night – Nov 22</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-3 border-top">
+      <div class="container text-center small">
+        © 2025 Campus Life Super App
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS (for interactive map) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- App JS -->
+    <script src="js/script.js"></script>
+  </body>
 </html>

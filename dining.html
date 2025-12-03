@@ -1,107 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campus Life – Dining</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Dining | Campus Life Super App</title>
 
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Campus Life Super App</a>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Campus Life</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link active" href="dining.html">Dining</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="dining.html">Dining</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="container my-5">
-    <h1 class="h4 mb-4 page-title">Campus Dining</h1>
+    <!-- MAIN CONTENT -->
+    <main class="container my-4">
+      <h1 class="h4 page-title mb-4">Campus Dining</h1>
 
-    <div class="row mb-4 gy-3">
-      <!-- HOURS & LOCATIONS -->
-      <section class="col-md-7">
-        <div class="wf-box h-100">
-          <h2 class="h6">Dining Hours & Locations</h2>
-          <ul class="mb-0">
+      <!-- HOURS + MEAL PLAN -->
+      <div class="row mb-4">
+        <section class="col-md-8 wf-box" aria-labelledby="hours-title">
+          <h2 id="hours-title" class="h6">Dining Hours &amp; Locations</h2>
+          <ul class="mb-1">
             <li>Dining Hall – Open 7:00 AM–8:00 PM (Mon–Fri)</li>
             <li>Campus Café – Open 8:00 AM–10:00 PM (Daily)</li>
             <li>Food Truck – Fridays, 11:00 AM–3:00 PM (Quad)</li>
           </ul>
-        </div>
-      </section>
+      
+        </section>
 
-      <!-- MEAL PLAN BALANCE (API PLACEHOLDER) -->
-      <section class="col-md-5">
-        <div class="wf-box h-100">
-          <h2 class="h6">Meal Plan Balance</h2>
-          <p id="mealPlanBalance">Loading meal plan balance (placeholder)...</p>
-          <small class="text-muted">
-            This section will later connect to a real dining API for student balances.
-          </small>
-        </div>
-      </section>
-    </div>
-
-    <!-- TODAY'S MENUS -->
-    <section class="wf-box mb-4" aria-labelledby="todays-menu-heading">
-      <h2 id="todays-menu-heading" class="h6 mb-2">Today's Menus</h2>
-      <p><strong>Breakfast:</strong> Eggs, oatmeal, yogurt bar, fresh fruit.</p>
-      <p><strong>Lunch:</strong> Pasta bar, salad station, grilled chicken.</p>
-      <p><strong>Dinner:</strong> Stir-fry station, soup of the day, veggie options.</p>
-    </section>
-
-    <!-- DIETARY FILTERS -->
-    <section class="wf-box mb-4" aria-labelledby="dietary-filters-heading">
-      <h2 id="dietary-filters-heading" class="h6 mb-2">Dietary Filters</h2>
-      <p class="mb-2">Filter options (planned for a future update):</p>
-      <div class="d-flex flex-wrap gap-2">
-        <span class="badge bg-success">Vegan</span>
-        <span class="badge bg-info text-dark">Vegetarian</span>
-        <span class="badge bg-warning text-dark">Gluten-Free</span>
-        <span class="badge bg-primary">Halal</span>
+        <section class="col-md-4 wf-box" aria-labelledby="meal-plan-title">
+          <h2 id="meal-plan-title" class="h6">Meal Plan Balance</h2>
+          <p id="mealPlanBalance">Loading meal plan balance...</p>
+        </section>
       </div>
-    </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="border-top py-3">
-    <div class="container text-center">
-      <small>© 2025 Campus Life Super App – Dining</small>
-    </div>
-  </footer>
+      <!-- TODAY'S MENUS -->
+      <section class="wf-box mb-4" aria-labelledby="menus-title">
+        <h2 id="menus-title" class="h6">Today's Menus</h2>
+        <p class="mb-1">
+          Breakfast: Eggs, oatmeal, yogurt bar, fresh fruit.
+        </p>
+        <p class="mb-1">
+          Lunch: Pasta bar, salad station, grilled chicken, veggie burgers.
+        </p>
+        <p class="mb-0">
+          Dinner: Stir-fry station, soup of the day, veggie options, and more.
+        </p>
+      </section>
 
-  <!-- Bootstrap JS + custom script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+      <!-- DIETARY FILTERS + MENU ITEMS -->
+      <section class="wf-box" aria-labelledby="dietary-filters-title">
+        <h2 id="dietary-filters-title" class="h6">
+          Dietary Filters
+        </h2>
+        <p class="small mb-2">
+          Use these buttons to filter menu items by dietary preference.
+        </p>
+
+        <div class="mb-2">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-secondary filter-btn"
+            data-category="all"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-success filter-btn"
+            data-category="vegan"
+          >
+            Vegan
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-success filter-btn"
+            data-category="vegetarian"
+          >
+            Vegetarian
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-warning filter-btn"
+            data-category="gluten-free"
+          >
+            Gluten-Free
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-info filter-btn"
+            data-category="halal"
+          >
+            Halal
+          </button>
+        </div>
+
+        <p id="dietaryStatus" class="small mb-2">
+          Showing all menu items.
+        </p>
+
+        <ul class="mb-0">
+          <li class="dining-item" data-category="vegan">
+            Veggie Power Bowl – quinoa, roasted vegetables, chickpeas (Vegan)
+          </li>
+          <li class="dining-item" data-category="vegetarian">
+            Margherita Flatbread – tomato, basil, mozzarella (Vegetarian)
+          </li>
+          <li class="dining-item" data-category="gluten-free">
+            Grilled Chicken &amp; Rice – steamed veggies (Gluten-Free)
+          </li>
+          <li class="dining-item" data-category="halal">
+            Lemon Herb Chicken – served with rice and salad (Halal)
+          </li>
+          <li class="dining-item" data-category="vegetarian">
+            Pasta Primavera – seasonal vegetables and cream sauce (Vegetarian)
+          </li>
+          <li class="dining-item" data-category="gluten-free">
+            Turkey Chili – with beans and toppings bar (Gluten-Free)
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-3 border-top">
+      <div class="container text-center small">
+        © 2025 Campus Life Super App
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
