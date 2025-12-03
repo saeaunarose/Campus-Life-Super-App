@@ -1,4 +1,4 @@
-/* style.css – custom styles for Campus Life Super App */
+/* style.css – custom styles */
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -14,4 +14,25 @@ body {
 
 .wf-box ul {
   padding-left: 1.25rem;
+}
+/* ---------- Responsive tweaks (tablet & smaller) ---------- */
+@media (max-width: 768px) {
+  h1,
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .wf-box {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .hero-section,
+  .feature-section {
+    text-align: center;
+  }
 }
