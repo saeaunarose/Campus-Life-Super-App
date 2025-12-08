@@ -10,11 +10,13 @@ body {
 }
 
 .wf-box {
-  background-color: #ffffff;
-  border: 1px dashed #cccccc;
-  border-radius: 0.5rem;
-  padding: 1.25rem;
+    background-color: #ffffff;
+    border: none;                         /* removes the tattered border */
+    border-radius: 8px;                   /* smooth rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);/* clean subtle shadow */
+    padding: 1.25rem;
 }
+
 
 /* Make links stand out slightly */
 a {
@@ -51,12 +53,13 @@ footer {
   }
 }
 .wf-box {
-  background-color: #ffffff;
-  border: 1px dashed #cccccc;
-  border-radius: 0.5rem;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
+    background-color: #ffffff;
+    border: none;                         /* removes the tattered border */
+    border-radius: 8px;                   /* smooth rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);/* clean subtle shadow */
+    padding: 1.25rem;
 }
+
 
 .page-title {
   font-weight: 600;
@@ -80,12 +83,13 @@ footer {
   }
 }
 .wf-box {
-  background-color: #ffffff;
-  border: 1px dashed #cccccc;
-  border-radius: 0.5rem;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
+    background-color: #ffffff;
+    border: none;                         /* removes the tattered border */
+    border-radius: 8px;                   /* smooth rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);/* clean subtle shadow */
+    padding: 1.25rem;
 }
+
 
 .page-title {
   font-weight: 600;
